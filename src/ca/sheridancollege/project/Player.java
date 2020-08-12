@@ -38,11 +38,5 @@ public abstract class Player
     {
         playerID = givenID;
     }
-    
-    /**
-     * The method to be instantiated when you subclass the Player class
-     * with your specific type of Player and filled in with logic to play your game.
-     */
-    public abstract void play();
-    
+
 }

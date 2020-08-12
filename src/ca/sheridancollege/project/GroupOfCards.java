@@ -5,6 +5,7 @@
  */
 package ca.sheridancollege.project;
 
+import com.sun.jdi.Value;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -18,9 +19,9 @@ public class GroupOfCards
 {
    
     //The group of cards, stored in an ArrayList
-    private ArrayList <Card> cards;
+    private ArrayList<Cards> deckOfCards;//represents a deck of cards
     private int size;//the size of the grouping
-    
+
     public GroupOfCards(int givenSize)
     {
         size = givenSize;
@@ -28,16 +29,23 @@ public class GroupOfCards
     
     /**
      * A method that will get the group of cards as an ArrayList
-     * @return the group of cards.
      */
-    public ArrayList<Card> showCards()
+     
+    public GroupOfCards()
     {
-        return cards;
+    deckOfCards = new ArrayList<Cards>();//represents deck of cards
+    for(int i=0; i<4; i++)
+    {
+        for(int j=1; j<=13; j++)
+        {
+            deckOfCards.add(new Cards(i,j));
+        }
+    }
     }
     
     public void shuffle()
     {
-        Collections.shuffle(cards);
+        Collections.shuffle(deckOfCards);
     }
 
     /**
@@ -52,6 +60,10 @@ public class GroupOfCards
      */
     public void setSize(int givenSize) {
         size = givenSize;
+    }
+    public Cards drawCard()//draw card from deck
+    {
+        return deckOfCards.remove(0);
     }
     
 }//end class

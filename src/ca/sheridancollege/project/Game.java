@@ -6,6 +6,7 @@
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The class that models your game. You should create a more specific
@@ -58,7 +59,16 @@ public abstract class Game
      * player.
      */
     public abstract void declareWinner();
-
-   
+    public abstract boolean hasBlackJack(int handValue);
+    public abstract int calcHandValue(List<Cards> hand);
+    public abstract int Bet(int cash);
+    public abstract void Push();
+    public abstract void Lose();
+    public abstract void Hit(GroupOfCards deck, List<Cards> hand);
+    public abstract boolean isHitorStand(String hitter);
+    public abstract boolean checkBust(int handvalue);
+    public abstract boolean isyesorno(String answer);
+    public abstract void fivecardtrick();
+    
     
 }//end class
